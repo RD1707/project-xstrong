@@ -968,7 +968,8 @@ input[type="reset"].btn--primary,
 input[type="button"].btn--primary {
   background: #ffd900;
   border-color: #ffd900;
-  color: #FFFFFF;
+  color: #000000;
+  font-weight: 800;
 }
 
 .btn.btn--primary:hover,
@@ -1649,7 +1650,7 @@ body.menu-is-open {
  * ------------------------------------------------------------------- */
 .header-logo {
   z-index: 501;
-  display: inline-block;
+  display: none !important;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -2239,15 +2240,7 @@ body.menu-is-open {
  * ## home scroll
  * ------------------------------------------------------------------- */
 .home-content__scroll {
-  position: absolute;
-  right: 9.5rem;
-  bottom: 5.4rem;
-  -webkit-transform: rotate(-90deg) translate3d(100%, 50%, 0);
-  -ms-transform: rotate(-90deg) translate3d(100%, 50%, 0);
-  transform: rotate(-90deg) translate3d(100%, 50%, 0);
-  -webkit-transform-origin: right bottom;
-  -ms-transform-origin: right bottom;
-  transform-origin: right bottom;
+display: none !important;
 }
 
 .home-content__scroll .scroll-link {
@@ -3960,6 +3953,42 @@ footer a {
     padding: 0 2rem;
   }
 
+}
+
+/* 7. Ajustes do Formulário de Contato na secção amarela */
+.s-contact input[type="email"],
+.s-contact input[type="number"],
+.s-contact input[type="search"],
+.s-contact input[type="text"],
+.s-contact input[type="tel"],
+.s-contact input[type="url"],
+.s-contact input[type="password"],
+.s-contact textarea,
+.s-contact select {
+    background: rgba(0, 0, 0, 0.1); /* Fundo escuro transparente */
+    color: #000; /* Texto preto */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Borda sutil */
+}
+
+/* Ajusta a cor do texto do placeholder */
+.s-contact ::-webkit-input-placeholder { color: rgba(0, 0, 0, 0.7); }
+.s-contact :-moz-placeholder { color: rgba(0, 0, 0, 0.7); opacity: 1; }
+.s-contact ::-moz-placeholder { color: rgba(0, 0, 0, 0.7); opacity: 1; }
+.s-contact :-ms-input-placeholder { color: rgba(0, 0, 0, 0.7); }
+.s-contact ::-ms-input-placeholder { color: rgba(0, 0, 0, 0.7); }
+.s-contact ::placeholder { color: rgba(0, 0, 0, 0.7); }
+
+/* Ajusta a cor do texto ao digitar */
+.s-contact input[type="email"]:focus,
+.s-contact input[type="number"]:focus,
+.s-contact input[type="search"]:focus,
+.s-contact input[type="text"]:focus,
+.s-contact input[type="tel"]:focus,
+.s-contact input[type="url"]:focus,
+.s-contact input[type="password"]:focus,
+.s-contact textarea:focus,
+.s-contact select:focus {
+    color: #000;
 }
 
 /*# sourceMappingURL=main.css.map */

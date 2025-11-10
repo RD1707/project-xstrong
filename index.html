@@ -76,16 +76,7 @@
                         <a href="#0"><i class="fab fa-facebook"></i></a>
                     </li>
                     <li>
-                        <a href="#0"><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li>
                         <a href="#0"><i class="fab fa-instagram"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fab fa-behance"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fab fa-dribbble"></i></a>
                     </li>
                 </ul>
 
@@ -113,8 +104,8 @@
             <div class="row home-content__main">
 
                 <h1>
-                XStrong
-                </h1>
+                <img src="images/logo-xstrong.png" alt="XStrong" style="width: 100%; max-width: 550px; height: auto; transform: scale(2.5);">
+            </h1>
 
                 <h3>
                 Mais do que forte. É XStrong.<br>
@@ -145,16 +136,7 @@
                 <a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>
             </li>
             <li>
-                <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
-            </li>
-            <li>
                 <a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
-            </li>
-            <li>
-                <a href="#0"><i class="fab fa-behance" aria-hidden="true"></i><span>Behance</span></a>
-            </li>
-            <li>
-                <a href="#0"><i class="fab fa-dribbble" aria-hidden="true"></i><span>Dribbble</span></a>
             </li>
         </ul> <!-- end home-social -->
 
@@ -503,9 +485,22 @@
 
         <div class="row contact-main" data-aos="fade-up">
             <div class="col-full">
-                <p class="contact-email">
-                    <a href="mailto:contato@xstrong.com.br">contato@xstrong.com.br</a>
-                </p>
+                <form name="contactForm" id="contactForm" method="post" action="" style="max-width: 700px; margin: 0 auto 4rem auto;">
+                <fieldset>
+                    <div class="form-field">
+                        <input name="contactName" type="text" id="contactName" placeholder="Seu Nome" value="" minlength="2" required="" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Seu Email" value="" required="" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <textarea name="contactMessage" id="contactMessage" placeholder="Sua Mensagem" rows="5" required="" class="full-width"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <button class="btn btn--primary btn--large full-width">Solicitar Contato</button>
+                    </div>
+                </fieldset>
+            </form>
                 <p class="contact-address">
                 Brasil
                 </p>
@@ -521,9 +516,6 @@
                     </li>
                     <li>
                         <a href="#0"><i class="fab fa-instagram"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fab fa-youtube"></i></a>
                     </li>
                 </ul>
             </div>
