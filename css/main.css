@@ -1823,111 +1823,6 @@ body.menu-is-open {
   margin: 0;
 }
 
-/* ===================================================================
- * # Melhorias B2B XStrong
- * ------------------------------------------------------------------- */
-
-/* Hero benefits list */
-.home-content__benefits {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.home-content__benefits p {
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0;
-}
-
-/* WhatsApp highlight box */
-.whatsapp-highlight {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 3rem;
-  border-radius: 8px;
-  max-width: 600px;
-  margin: 4rem auto;
-  border: 2px solid rgba(255, 217, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.whatsapp-highlight:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 217, 0, 0.4);
-  transform: translateY(-2px);
-}
-
-.whatsapp-highlight h3 {
-  text-align: center;
-  color: #FFFFFF;
-  margin-bottom: 2rem;
-  margin-top: 0;
-}
-
-.whatsapp-highlight p {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.6rem;
-}
-
-/* Contact WhatsApp number emphasis */
-.contact-numbers .whatsapp-main {
-  color: #ffd900;
-  text-decoration: none;
-  font-size: 2.4rem;
-  font-weight: 700;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.contact-numbers .whatsapp-main:hover {
-  color: #FFFFFF;
-  transform: scale(1.05);
-}
-
-.contact-numbers .whatsapp-hours {
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
-  display: block;
-  margin-top: 0.5rem;
-}
-
-/* Social proof badge */
-.social-proof {
-  text-align: center;
-  font-size: 1.6rem;
-  margin-top: 3rem;
-  color: #ffd900;
-  font-weight: 600;
-}
-
-/* CTA section improvements */
-.cta-section {
-  margin-top: 6rem;
-  text-align: center;
-}
-
-.cta-section h3 {
-  color: #FFFFFF;
-  margin-bottom: 2rem;
-}
-
-/* Responsive adjustments */
-@media only screen and (max-width: 600px) {
-  .home-content__benefits p {
-    font-size: 1.3rem;
-  }
-  
-  .whatsapp-highlight {
-    padding: 2rem;
-    margin: 3rem auto;
-  }
-  
-  .contact-numbers .whatsapp-main {
-    font-size: 2rem;
-  }
-}
-
 .header-nav__close {
   z-index: 601;
   display: block;
@@ -2296,6 +2191,9 @@ body.menu-is-open {
   background-color: #e6c300;
 }
 
+/* ------------------------------------------------------------------- 
+ * ## home buttons
+ * ------------------------------------------------------------------- */
 .home-content__button {
   margin-top: 7.8rem;
   position: relative;
