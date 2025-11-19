@@ -193,22 +193,24 @@
                 max-width: 85%;
             }
 
-            /* G. CORREÇÃO DO BOTÃO ESTOURANDO A TELA (Fix Solicitado) */
+            /* G. Correção do Botão Estourando a Tela */
             .catalog-cta .btn {
-                white-space: normal !important; /* Permite quebra de linha */
-                height: auto !important;        /* Altura se ajusta ao texto */
-                line-height: 1.4 !important;    /* Espaçamento entre linhas */
-                padding: 15px 20px !important;  /* Padding interno */
+                white-space: normal !important;
+                height: auto !important;
+                line-height: 1.4 !important;
+                padding: 15px 20px !important;
                 width: 100%;
-                max-width: 320px;               /* Largura segura */
+                max-width: 320px;
                 display: inline-block;
             }
         }
 
-        /* Desktop ajustes específicos */
+        /* ===================================================================
+         * Desktop Ajustes Específicos (min-width: 801px)
+         * =================================================================== */
         @media screen and (min-width: 801px) {
             .header-logo svg {
-                width: 200px;
+                width: 160px;
             }
         }
     </style>
@@ -239,7 +241,6 @@
                     <rect x="0" y="15" width="10" height="30" fill="#FDB913"/>
                     <rect x="15" y="15" width="10" height="30" fill="#FDB913"/>
                     <rect x="30" y="15" width="10" height="30" fill="#FDB913"/>
-
                     <text x="50" y="40" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="white">Xstrong</text>
                 </svg>
             </a>
@@ -295,7 +296,6 @@
                             <rect x="0" y="20" width="18" height="60" fill="#FDB913"/>
                             <rect x="30" y="20" width="18" height="60" fill="#FDB913"/>
                         </g>
-
                         <text x="72" y="80" font-family="'Open Sans', 'Lato', sans-serif" font-size="82" font-weight="bold" fill="white" transform="skewX(-10)" letter-spacing="-2px">
                             Xstrong
                         </text>
@@ -311,7 +311,7 @@
                     <a href="#works" class="smoothscroll btn btn--primary btn--large">
                         Conheça nossos produtos
                     </a>
-                    <a href="#contact" class="smoothscroll btn btn--large">
+                    <a href="https://wa.me/557140428903" target="_blank" class="btn btn--large">
                         Solicitar Catálogo
                     </a>
                 </div>
@@ -531,7 +531,7 @@
                     Temos uma linha completa de acessórios esperando por você. 
                     Baixe nosso catálogo completo ou fale diretamente com um vendedor.
                 </p>
-                <a href="#contact" class="smoothscroll btn btn--primary btn--large">
+                <a href="https://wa.me/557140428903" target="_blank" class="btn btn--primary btn--large">
                     Solicitar Catálogo Completo
                 </a>
             </div>
@@ -585,7 +585,7 @@
 
         <div class="row contact-main" data-aos="fade-up">
             <div class="col-full">
-                <form name="contactForm" id="contactForm" method="post" action="" style="max-width: 700px; margin: 0 auto 4rem auto;">
+                <form name="contactForm" id="contactForm" method="post" action="https://formsubmit.co/atendimento@gruponavegante.com.br" style="max-width: 700px; margin: 0 auto 4rem auto;">
                 <fieldset>
                     <div class="form-field">
                         <input name="contactName" type="text" id="contactName" placeholder="Seu Nome" value="" minlength="2" required="" class="full-width">
@@ -602,6 +602,8 @@
                     <div class="form-field">
                         <button class="btn btn--primary btn--large full-width">Solicitar Catálogo</button>
                     </div>
+                    <input type="hidden" name="_subject" value="Novo contato via Site XStrong">
+                    <input type="hidden" name="_captcha" value="false">
                 </fieldset>
             </form>
                 <p class="contact-address">
@@ -609,8 +611,8 @@
                 </p>
                 
                 <p class="contact-numbers">
-                    <a href="https://wa.me/5511999999999" target="_blank" style="color: #FFFFFF; text-decoration: none; font-weight: bold;">
-                        <i class="fab fa-whatsapp" style="color: #25D366;"></i> WhatsApp: (11) 99999-9999
+                    <a href="https://wa.me/557140428903" target="_blank" style="color: #FFFFFF; text-decoration: none; font-weight: bold;">
+                        <i class="fab fa-whatsapp" style="color: #25D366;"></i> WhatsApp: (71) 4042-8903
                     </a>
                 </p>
 
