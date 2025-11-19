@@ -15,10 +15,9 @@
 
     <style>
         /* ===================================================================
-         * CSS Específico para Correções (Mobile First & Layout)
+         * CSS Específico para Correções
          * =================================================================== */
 
-        /* --- 1. Ajustes Gerais de SVG e Overflow --- */
         html, body {
             overflow-x: hidden;
             max-width: 100%;
@@ -28,6 +27,18 @@
             max-width: 100%;
             height: auto;
             display: block; 
+        }
+
+        /* --- 1. AJUSTES DO LOGO GRANDE (HERO) --- */
+        /* Aplica tanto para Desktop quanto Mobile */
+        .home-content h1 svg {
+            /* Tamanho máximo para Desktop (diminuído conforme pedido) */
+            max-width: 450px; 
+            width: 100%;
+            height: auto;
+            /* Centralização garantida */
+            display: block;
+            margin: 0 auto; 
         }
 
         /* --- 2. Ajustes de Fontes --- */
@@ -44,182 +55,82 @@
             font-size: 2.8rem !important;
         }
 
-        /* --- 3. Layout Lado a Lado (Desktop Padrão) --- */
-        .side-by-side {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            margin-bottom: 4rem;
-        }
-
-        .col-text {
-            flex: 0 0 50%;
-            max-width: 50%;
-            padding-right: 40px;
-            box-sizing: border-box;
-            text-align: left; 
-        }
-
-        .col-image {
-            flex: 0 0 50%;
-            max-width: 50%;
-            padding-left: 20px;
-            box-sizing: border-box;
-        }
-
-        .col-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .col-image img:hover {
-            transform: scale(1.02);
-        }
-
-        /* --- 4. Grid de Produtos --- */
+        /* --- 3. Grid de Produtos --- */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             margin-top: 30px;
         }
-
         .products-grid .item-folio {
-            width: 100%;
-            height: 100%;
-            float: none;
-            margin: 0;
-            padding: 0;
-            border: none;
-            border-radius: 8px;
-            overflow: hidden;
+            width: 100%; border-radius: 8px; overflow: hidden;
         }
-        
-        .products-grid .item-folio__thumb a {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-
         .products-grid img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            display: block;
+            width: 100%; height: 350px; object-fit: cover; display: block;
         }
 
-        /* CTA do Catálogo */
+        /* --- 4. Layout Lado a Lado (Desktop) --- */
+        .side-by-side {
+            display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 4rem;
+        }
+        .col-text { flex: 0 0 50%; max-width: 50%; padding-right: 40px; box-sizing: border-box; text-align: left; }
+        .col-image { flex: 0 0 50%; max-width: 50%; padding-left: 20px; box-sizing: border-box; }
+        .col-image img { width: 100%; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+
+        /* --- 5. CTA Catálogo --- */
         .catalog-cta {
-            text-align: center;
-            margin-top: 6rem;
-            padding: 4rem 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
+            text-align: center; margin-top: 6rem; padding: 4rem 2rem;
+            background: rgba(255, 255, 255, 0.05); border-radius: 10px;
         }
 
         /* ===================================================================
-         * RESPONSIVIDADE (Mobile - max-width: 800px)
+         * MOBILE (max-width: 800px)
          * =================================================================== */
         @media only screen and (max-width: 800px) {
             
-            /* A. Logo Menor e CENTRALIZADO */
-            .header-logo {
-                left: 50% !important; /* Move para o meio da tela */
-                transform: translate(-50%, -50%) !important; /* Centraliza exato (X e Y) */
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            .header-logo svg {
-                width: 80px; 
+            /* A. Reduzir ainda mais o logo grande no celular */
+            .home-content h1 svg {
+                max-width: 280px !important; /* Tamanho menor solicitado */
             }
 
-            /* B. Centralização das Seções Lado a Lado (Sobre) */
-            .side-by-side {
-                flex-direction: column;
+            /* B. Centralizar Header Logo */
+            .header-logo {
+                left: 0 !important; right: 0 !important; width: 100% !important;
+                text-align: center !important; top: 50% !important;
+                transform: translateY(-50%) !important; margin: 0 !important;
             }
+            .header-logo a { display: inline-block !important; }
+            .header-logo svg { width: 80px; }
+
+            /* C. Centralizar Seções e Botões */
+            .side-by-side { flex-direction: column; }
             .col-text, .col-image {
-                flex: 0 0 100%;
-                max-width: 100%;
-                padding: 0 15px;
-                text-align: center !important;
+                flex: 0 0 100%; max-width: 100%; padding: 0 15px; text-align: center !important;
             }
             .col-text { margin-bottom: 3rem; padding-right: 0; }
             .col-image { padding-left: 0; margin-bottom: 2rem; }
-            
-            .col-image img {
-                margin: 0 auto;
-                max-width: 90%;
-            }
+            .col-image img { margin: 0 auto; max-width: 90%; }
 
-            /* C. Ajuste dos Ícones de Serviços (Diferenciais) */
-            .item-service {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                margin-bottom: 4rem;
-                padding: 0 10px !important;
-            }
-            
-            .item-service__icon {
-                float: none;
-                margin: 0 0 15px 0;
-                display: inline-block;
-            }
-
-            .item-service__text {
-                margin-left: 0;
-            }
-
-            /* D. Grid de Produtos vira 1 Coluna */
-            .products-grid {
-                grid-template-columns: 1fr;
-                padding: 0 15px;
-            }
-
-            /* E. Botões da Home Centralizados */
             .home-content__button {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                display: flex; flex-direction: column; align-items: center;
             }
             .home-content__button .btn {
-                margin: 0 0 15px 0 !important;
-                width: 100%;
-                max-width: 300px;
-                /* Correção do alinhamento do texto */
+                margin: 0 0 15px 0 !important; width: 100%; max-width: 300px;
                 text-align: center !important;
-                padding-left: 0 !important;
-                padding-right: 0 !important;
             }
 
-            /* F. SVG Principal da Home */
-            .home-content h1 svg {
-                max-width: 80%;
-            }
+            .products-grid { grid-template-columns: 1fr; padding: 0 15px; }
 
-            /* G. Correção do Botão Estourando a Tela */
             .catalog-cta .btn {
-                white-space: normal !important;
-                height: auto !important;
-                line-height: 1.4 !important;
-                padding: 15px 20px !important;
-                width: 100%;
-                max-width: 320px;
-                display: inline-block;
+                white-space: normal !important; height: auto !important;
+                line-height: 1.4 !important; padding: 15px 20px !important;
+                width: 100%; max-width: 320px; display: inline-block;
             }
         }
 
-        /* ===================================================================
-         * Desktop Ajustes Específicos (min-width: 801px)
-         * =================================================================== */
+        /* Desktop Logo Header Ajuste */
         @media screen and (min-width: 801px) {
-            .header-logo svg {
-                width: 120px; 
-            }
+            .header-logo svg { width: 120px; }
         }
     </style>
 
@@ -299,7 +210,7 @@
             <div class="row home-content__main">
 
                 <h1>
-                    <svg viewBox="-20 -20 400 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="-50 -30 550 180" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g transform="translate(20, 0) skewX(-15)">
                             <rect x="0" y="20" width="18" height="60" fill="#FDB913"/>
                             <rect x="30" y="20" width="18" height="60" fill="#FDB913"/>
