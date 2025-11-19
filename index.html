@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="pt-br">
 <head>
 
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/main.css">
 
     <style>
-        /* --- Redução do tamanho das fontes dos títulos --- */
+        /* --- Redução do tamanho das fontes dos títulos (Solicitado anteriormente) --- */
         .display-1 {
             font-size: 3.2rem !important;
             line-height: 1.3;
@@ -32,14 +32,14 @@
         .side-by-side {
             display: flex;
             flex-wrap: wrap;
-            align-items: center; /* Centraliza verticalmente */
+            align-items: center;
             margin-bottom: 4rem;
         }
 
         .col-text {
             flex: 0 0 50%;
             max-width: 50%;
-            padding-right: 40px; /* Espaço entre texto e imagem */
+            padding-right: 40px;
             box-sizing: border-box;
             text-align: left; 
         }
@@ -63,7 +63,50 @@
             transform: scale(1.02);
         }
 
-        /* Responsividade para Telas Menores */
+        /* --- NOVO: Grid de Produtos Alinhados --- */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+            gap: 20px; /* Espaço entre as imagens */
+            margin-top: 30px;
+        }
+
+        .products-grid .item-folio {
+            width: 100%;
+            height: 100%;
+            /* Removemos flutuações e margens antigas */
+            float: none;
+            margin: 0;
+            padding: 0;
+            border: none; /* Remove borda se desejar visual mais limpo, ou mantenha */
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .products-grid .item-folio__thumb a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Força as imagens a terem a mesma altura para alinhar o grid perfeitamente */
+        .products-grid img {
+            width: 100%;
+            height: 350px; /* Altura fixa para alinhamento */
+            object-fit: cover; /* Corta a imagem proporcionalmente para preencher o espaço */
+            display: block;
+        }
+
+        /* --- CTA Abaixo dos produtos --- */
+        .catalog-cta {
+            text-align: center;
+            margin-top: 6rem;
+            padding: 4rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        /* Responsividade */
         @media only screen and (max-width: 800px) {
             .side-by-side {
                 flex-direction: column;
@@ -74,13 +117,12 @@
                 padding: 0 15px;
                 text-align: center;
             }
-            .col-text {
-                margin-bottom: 3rem;
-                padding-right: 15px;
-            }
-            .col-image {
-                padding-left: 15px;
-                margin-bottom: 2rem;
+            .col-text { margin-bottom: 3rem; padding-right: 15px; }
+            .col-image { padding-left: 15px; margin-bottom: 2rem; }
+            
+            /* Grid vira 1 coluna no celular */
+            .products-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -109,7 +151,9 @@
             <a class="site-logo" href="index.html">
                 <img src="images/logo-xstrong.png" alt="XStrong">
             </a>
-        </div> <nav class="header-nav">
+        </div> 
+
+        <nav class="header-nav">
 
             <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
 
@@ -125,22 +169,25 @@
                     <li><a class="smoothscroll"  href="#contact" title="contato">Contato</a></li>
                 </ul>
 
-                <p>Acessórios automotivos resistentes e confiáveis para quem busca durabilidade e alta performance. Produtos fortes que acompanham você em qualquer caminho.</p>
+                <p>Acessórios automotivos resistentes e confiáveis para quem busca durabilidade e alta performance.</p>
     
                 <ul class="header-nav__social">
-                    <li>
-                        <a href="#0"><i class="fab fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fab fa-instagram"></i></a>
-                    </li>
+                    <li><a href="#0"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#0"><i class="fab fa-instagram"></i></a></li>
                 </ul>
 
-            </div> </nav> <a class="header-menu-toggle" href="#0">
+            </div> 
+
+        </nav> 
+
+        <a class="header-menu-toggle" href="#0">
             <span class="header-menu-icon"></span>
         </a>
 
-    </header> <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/hero-bg-xstrong.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    </header> 
+
+
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/hero-bg-xstrong.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
 
         <div class="grid-overlay">
             <div></div>
@@ -164,24 +211,29 @@
                         Conheça nossos produtos
                     </a>
                     <a href="#contact" class="smoothscroll btn btn--large">
-                        Fale Conosco
+                        Solicitar Catálogo
                     </a>
                 </div>
 
-            </div> <div class="home-content__scroll">
+            </div> 
+
+            <div class="home-content__scroll">
                 <a href="#about" class="scroll-link smoothscroll">
                     Scroll
                 </a>
             </div>
 
-        </div> <ul class="home-social">
-            <li>
-                <a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>
-            </li>
-            <li>
-                <a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
-            </li>
-        </ul> </section> <section id="about" class="s-about target-section">
+        </div> 
+
+        <ul class="home-social">
+            <li><a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a></li>
+            <li><a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
+        </ul> 
+
+    </section> 
+
+
+    <section id="about" class="s-about target-section">
 
         <div class="row bit-narrow side-by-side" data-aos="fade-up">
             
@@ -205,7 +257,10 @@
 
         </div> 
 
-    </section> <section id='services' class="s-services target-section darker">
+    </section> 
+
+
+    <section id='services' class="s-services target-section darker">
 
         <div class="row bit-narrow side-by-side" data-aos="fade-up" style="margin-bottom: 8rem;">
             
@@ -228,223 +283,164 @@
         <div class="row bit-narrow services block-1-2 block-tab-full">
 
             <div class="col-block item-service" data-aos="fade-up">
-                <div class="item-service__icon">
-                    <i class="icon-star"></i>
-                </div>
+                <div class="item-service__icon"><i class="icon-star"></i></div>
                 <div class="item-service__text">
-                    <h3 class="item-title">Produtos Testados e Aprovados</h3>
-                    <p>Todos os nossos acessórios passam por rigorosos testes de qualidade e durabilidade,
-                    garantindo que você receba produtos confiáveis e de alto desempenho para o seu veículo.
-                    </p>
+                    <h3 class="item-title">Produtos Testados</h3>
+                    <p>Acessórios que passam por rigorosos testes de qualidade e durabilidade.</p>
                 </div>
             </div>
 
             <div class="col-block item-service" data-aos="fade-up">
-                <div class="item-service__icon">
-                    <i class="icon-group"></i>
-                </div>
+                <div class="item-service__icon"><i class="icon-group"></i></div>
                 <div class="item-service__text">
                     <h3 class="item-title">Suporte Personalizado</h3>
-                    <p>Nossa equipe está sempre pronta para atender você, oferecendo suporte especializado
-                    para tirar dúvidas sobre instalação, funcionamento e escolha dos melhores produtos.
-                    </p>
+                    <p>Equipe pronta para tirar dúvidas sobre instalação e funcionamento.</p>
                 </div>
             </div>
 
             <div class="col-block item-service" data-aos="fade-up">
-                <div class="item-service__icon">
-                    <i class="icon-cube"></i>
-                </div>
+                <div class="item-service__icon"><i class="icon-cube"></i></div>
                 <div class="item-service__text">
                     <h3 class="item-title">Envio Rápido</h3>
-                    <p>Trabalhamos com logística eficiente para garantir que seus produtos cheguem
-                    rapidamente e com segurança, onde quer que você esteja.
-                    </p>
+                    <p>Logística eficiente para garantir que seus produtos cheguem rapidamente.</p>
                 </div>
             </div>
 
             <div class="col-block item-service" data-aos="fade-up">
-                <div class="item-service__icon">
-                    <i class="icon-shield"></i>
-                </div>
+                <div class="item-service__icon"><i class="icon-shield"></i></div>
                 <div class="item-service__text">
                     <h3 class="item-title">Qualidade Garantida</h3>
-                    <p>Todos os produtos XStrong possuem garantia e são feitos com materiais
-                    resistentes, pensados para durar e proporcionar a melhor experiência automotiva.
-                    </p>
+                    <p>Produtos com garantia e feitos com materiais resistentes.</p>
                 </div>
             </div>
 
-        </div> </section> <section id="works" class="s-works target-section" style="transform: translateY(-15px);">
+        </div> 
+
+    </section> 
+
+
+    <section id="works" class="s-works target-section" style="transform: translateY(-15px);">
 
         <div class="row section-header has-bottom-sep narrow target-section" data-aos="fade-up">
             <div class="col-full">
                 <h3 class="subhead">Nossos Produtos</h3>
                 <h1 class="display-1">
-                Conheça nossa linha completa de acessórios automotivos resistentes e funcionais.
-                Produtos de qualidade que fazem a diferença.
+                Conheça nossa linha de acessórios automotivos resistentes.
                 </h1>
             </div>
-        </div> <div class="row masonry-wrap">
+        </div> 
 
-            <div class="masonry">
+        <div class="row masonry-wrap">
+
+            <div class="products-grid">
     
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/produto-iluminacao-rgb.jpg" class="thumb-link" title="Iluminação RGB" data-size="1050x700">
-                                <img src="images/portfolio/produto-iluminacao-rgb.jpg" alt="Iluminação RGB">
-                            </a>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Kit reparo rápido de pneu
-                            </h3>
-                            <p class="item-folio__cat">
-                                Reparo
-                            </p>
-                        </div>
-
-                        <a href="#contact" class="item-folio__project-link smoothscroll" title="Comprar">
-                            <i class="icon-link"></i>
+                <div class="item-folio" data-aos="fade-up">
+                    <div class="item-folio__thumb">
+                        <a href="images/portfolio/produto-iluminacao-rgb.jpg" class="thumb-link" title="Kit Reparo" data-size="1050x700">
+                            <img src="images/portfolio/produto-iluminacao-rgb.jpg" alt="Kit Reparo">
                         </a>
-
-                        <div class="item-folio__caption">
-                            <p>Kit de reparo que nunca te deixa em apuros.</p>
-                        </div>
-
                     </div>
-                </div> <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
+                    <div class="item-folio__text">
+                        <h3 class="item-folio__title">Kit reparo rápido de pneu</h3>
+                        <p class="item-folio__cat">Reparo</p>
+                    </div>
+                    <a href="#contact" class="item-folio__project-link smoothscroll" title="Pedir">
+                        <i class="icon-link"></i>
+                    </a>
+                </div>
 
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/produto-espelho-camera.jpg" class="thumb-link" title="Espelho Retrovisor com Câmera" data-size="1050x700">
-                                <img src="images/portfolio/produto-espelho-camera.jpg" alt="Espelho Retrovisor">
-                            </a>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Película para retrovisor
-                            </h3>
-                            <p class="item-folio__cat">
-                                Segurança
-                            </p>
-                        </div>
-
-                        <a href="#contact" class="item-folio__project-link smoothscroll" title="Comprar">
-                            <i class="icon-link"></i>
+                <div class="item-folio" data-aos="fade-up">
+                    <div class="item-folio__thumb">
+                        <a href="images/portfolio/produto-espelho-camera.jpg" class="thumb-link" title="Película" data-size="1050x700">
+                            <img src="images/portfolio/produto-espelho-camera.jpg" alt="Película Retrovisor">
                         </a>
-
-
                     </div>
-                </div> <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/produto-manometro.jpg" class="thumb-link" title="Manômetro Digital" data-size="1050x700">
-                                <img src="images/portfolio/produto-manometro.jpg" alt="Manômetro Digital">
-                            </a>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Manômetro Digital
-                            </h3>
-                            <p class="item-folio__cat">
-                                Instrumentos
-                            </p>
-                        </div>
-
-                        <a href="#contact" class="item-folio__project-link smoothscroll" title="Comprar">
-                            <i class="icon-link"></i>
+                    <div class="item-folio__text">
+                        <h3 class="item-folio__title">Película para retrovisor</h3>
+                        <p class="item-folio__cat">Segurança</p>
+                    </div>
+                    <a href="#contact" class="item-folio__project-link smoothscroll" title="Pedir">
+                        <i class="icon-link"></i>
+                    </a>
+                </div>
+        
+                <div class="item-folio" data-aos="fade-up">
+                    <div class="item-folio__thumb">
+                        <a href="images/portfolio/produto-manometro.jpg" class="thumb-link" title="Manômetro" data-size="1050x700">
+                            <img src="images/portfolio/produto-manometro.jpg" alt="Manômetro Digital">
                         </a>
-
-                        <div class="item-folio__caption">
-                            <p>Medidor de pressão de pneus digital de alta precisão com display LCD e alerta sonoro.</p>
-                        </div>
-
                     </div>
-                </div> <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/produto-espelho-bebe.jpg" class="thumb-link" title="Espelho para Bebê" data-size="1050x700">
-                                <img src="images/portfolio/produto-espelho-bebe.jpg" alt="Espelho para Bebê">
-                            </a>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Espelho Retrovisor para Bebê
-                            </h3>
-                            <p class="item-folio__cat">
-                                Segurança Infantil
-                            </p>
-                        </div>
-
-                        <a href="#contact" class="item-folio__project-link smoothscroll" title="Comprar">
-                            <i class="icon-link"></i>
+                    <div class="item-folio__text">
+                        <h3 class="item-folio__title">Manômetro Digital</h3>
+                        <p class="item-folio__cat">Instrumentos</p>
+                    </div>
+                    <a href="#contact" class="item-folio__project-link smoothscroll" title="Pedir">
+                        <i class="icon-link"></i>
+                    </a>
+                </div>
+        
+                <div class="item-folio" data-aos="fade-up">
+                    <div class="item-folio__thumb">
+                        <a href="images/portfolio/produto-espelho-bebe.jpg" class="thumb-link" title="Espelho Bebê" data-size="1050x700">
+                            <img src="images/portfolio/produto-espelho-bebe.jpg" alt="Espelho Bebê">
                         </a>
-
-                        <div class="item-folio__caption">
-                            <p>Espelho ajustável de alta qualidade para monitorar seu bebê no banco traseiro com total segurança.</p>
-                        </div>
-
                     </div>
-                </div> <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/produto-luz-teto.jpg" class="thumb-link" title="Luz de Teto LED" data-size="1050x700">
-                                <img src="images/portfolio/produto-luz-teto.jpg" alt="Luz de Teto LED">
-                            </a>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Luz de Teto LED Laser
-                            </h3>
-                            <p class="item-folio__cat">
-                                Iluminação
-                            </p>
-                        </div>
-
-                        <a href="#contact" class="item-folio__project-link smoothscroll" title="Comprar">
-                            <i class="icon-link"></i>
+                    <div class="item-folio__text">
+                        <h3 class="item-folio__title">Espelho Retrovisor para Bebê</h3>
+                        <p class="item-folio__cat">Segurança Infantil</p>
+                    </div>
+                    <a href="#contact" class="item-folio__project-link smoothscroll" title="Pedir">
+                        <i class="icon-link"></i>
+                    </a>
+                </div>
+    
+                <div class="item-folio" data-aos="fade-up">
+                    <div class="item-folio__thumb">
+                        <a href="images/portfolio/produto-luz-teto.jpg" class="thumb-link" title="Luz Teto" data-size="1050x700">
+                            <img src="images/portfolio/produto-luz-teto.jpg" alt="Luz de Teto">
                         </a>
-
-                        <div class="item-folio__caption">
-                            <p>Luz de teto LED com efeito laser vermelho, design moderno e instalação simples.</p>
-                        </div>
-
                     </div>
-                </div> <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/produto-batente.jpg" class="thumb-link" title="Batente de Porta" data-size="1050x700">
-                                <img src="images/portfolio/produto-batente.jpg" alt="Batente de Porta">
-                            </a>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Iluminação em Led RGB para painel com controle remoto.
-                            </h3>
-                            <p class="item-folio__cat">
-                                Acessórios
-                            </p>
-                        </div>
-
-                        <a href="#contact" class="item-folio__project-link smoothscroll" title="Comprar">
-                            <i class="icon-link"></i>
+                    <div class="item-folio__text">
+                        <h3 class="item-folio__title">Para Brisa com Camera de Re</h3>
+                        <p class="item-folio__cat">Iluminação</p>
+                    </div>
+                    <a href="#contact" class="item-folio__project-link smoothscroll" title="Pedir">
+                        <i class="icon-link"></i>
+                    </a>
+                </div>
+        
+                <div class="item-folio" data-aos="fade-up">
+                    <div class="item-folio__thumb">
+                        <a href="images/portfolio/produto-batente.jpg" class="thumb-link" title="Iluminação RGB" data-size="1050x700">
+                            <img src="images/portfolio/produto-batente.jpg" alt="Iluminação RGB">
                         </a>
-
                     </div>
-                </div> </div> </div> </section> <section id="garantia" class="s-clients target-section darker">
+                    <div class="item-folio__text">
+                        <h3 class="item-folio__title">Iluminação LED RGB Painel</h3>
+                        <p class="item-folio__cat">Acessórios</p>
+                    </div>
+                    <a href="#contact" class="item-folio__project-link smoothscroll" title="Pedir">
+                        <i class="icon-link"></i>
+                    </a>
+                </div>
+    
+            </div> <div class="col-full catalog-cta" data-aos="fade-up">
+                <h3 style="color: #ffd900;">Procurando mais opções?</h3>
+                <p style="font-size: 1.8rem; max-width: 700px; margin: 0 auto 3rem auto;">
+                    Temos uma linha completa de acessórios esperando por você. 
+                    Baixe nosso catálogo completo ou fale diretamente com um vendedor.
+                </p>
+                <a href="#contact" class="smoothscroll btn btn--primary btn--large">
+                    Solicitar Catálogo Completo
+                </a>
+            </div>
+
+        </div> 
+
+    </section> 
+
+
+    <section id="garantia" class="s-clients target-section darker">
 
         <div class="grid-overlay">
             <div></div>
@@ -455,17 +451,22 @@
                 <h3 class="subhead">Garantia e Suporte</h3>
                 <h1 class="display-1">Compre com confiança e segurança</h1>
             </div>
-        </div> <div class="row" data-aos="fade-up">
+        </div> 
+
+        <div class="row" data-aos="fade-up">
             <div class="col-full">
                 <p style="text-align: center; font-size: 1.8rem; line-height: 2; padding: 0 2rem; max-width: 900px; margin: 0 auto;">
                     Todos os produtos XStrong possuem garantia contra defeitos de fabricação.
                     Oferecemos suporte completo para instalação e dúvidas técnicas.
-                    Sua satisfação e segurança são nossa prioridade. Trabalhamos com política de troca, garantindo tranquilidade em sua compra.
+                    Trabalhamos com política de troca transparente.
                 </p>
             </div>
         </div>
 
-    </section> <section id="contact" class="s-contact target-section">
+    </section> 
+
+
+    <section id="contact" class="s-contact target-section">
 
             <div class="grid-overlay">
                 <div></div>
@@ -473,10 +474,15 @@
 
         <div class="row section-header narrow" data-aos="fade-up">
             <div class="col-full">
-                <h3 class="subhead">Entre em Contato</h3>
-                <h1 class="display-1">Fale conosco para dúvidas, orçamentos <br> ou mais informações sobre nossos produtos</h1>
+                <h3 class="subhead">Faça seu Pedido</h3>
+                <h1 class="display-1">
+                    Solicite nosso catálogo completo <br> e garanta os melhores produtos.
+                </h1>
+                <p class="lead">Preencha os dados abaixo para receber o catálogo e tabela de preços.</p>
             </div>
-        </div> <div class="row contact-main" data-aos="fade-up">
+        </div> 
+
+        <div class="row contact-main" data-aos="fade-up">
             <div class="col-full">
                 <form name="contactForm" id="contactForm" method="post" action="" style="max-width: 700px; margin: 0 auto 4rem auto;">
                 <fieldset>
@@ -487,34 +493,34 @@
                         <input name="contactEmail" type="email" id="contactEmail" placeholder="Seu Email" value="" required="" class="full-width">
                     </div>
                     <div class="form-field">
-                        <textarea name="contactMessage" id="contactMessage" placeholder="Sua Mensagem" rows="5" required="" class="full-width"></textarea>
+                        <textarea name="contactMessage" id="contactMessage" placeholder="Quais produtos você tem interesse?" rows="5" required="" class="full-width"></textarea>
                     </div>
                     <div class="form-field">
-                        <button class="btn btn--primary btn--large full-width">Solicitar Contato</button>
+                        <button class="btn btn--primary btn--large full-width">Solicitar Catálogo</button>
                     </div>
                 </fieldset>
             </form>
                 <p class="contact-address">
                 Brasil
                 </p>
+                
                 <p class="contact-numbers">
-                    <a href="https://wa.me/5511999999999" target="_blank" style="color: #ffd900; text-decoration: none;">
-                        <i class="fab fa-whatsapp"></i> WhatsApp: (11) 99999-9999
+                    <a href="https://wa.me/5511999999999" target="_blank" style="color: #FFFFFF; text-decoration: none; font-weight: bold;">
+                        <i class="fab fa-whatsapp" style="color: #25D366;"></i> WhatsApp: (11) 99999-9999
                     </a>
                 </p>
 
                 <ul class="contact-social">
-                    <li>
-                        <a href="#0"><i class="fab fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fab fa-instagram"></i></a>
-                    </li>
+                    <li><a href="#0"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#0"><i class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
         </div>
 
-    </section> <footer>
+    </section> 
+
+
+    <footer>
         <div class="row">
             <div class="col-full ss-copyright">
                 <span>© Copyright XStrong 2025 - Todos os direitos reservados</span>
@@ -563,7 +569,9 @@
 
         </div>
 
-    </div> <script src="js/jquery-3.2.1.min.js"></script>
+    </div> 
+
+    <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
