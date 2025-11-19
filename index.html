@@ -30,15 +30,16 @@
         }
 
         /* --- 1. AJUSTES DO LOGO GRANDE (HERO) --- */
-        /* Aplica tanto para Desktop quanto Mobile */
         .home-content h1 svg {
-            /* Tamanho máximo para Desktop (diminuído conforme pedido) */
-            max-width: 450px; 
+            /* Tamanho AUMENTADO para Desktop */
+            max-width: 600px; 
             width: 100%;
             height: auto;
-            /* Centralização garantida */
             display: block;
             margin: 0 auto; 
+            
+            /* EMPURRÃOZINHO PARA A DIREITA (Desktop) */
+            transform: translateX(20px); 
         }
 
         /* --- 2. Ajustes de Fontes --- */
@@ -88,12 +89,16 @@
          * =================================================================== */
         @media only screen and (max-width: 800px) {
             
-            /* A. Reduzir ainda mais o logo grande no celular */
+            /* A. LOGO GRANDE (HERO) NO MOBILE */
             .home-content h1 svg {
-                max-width: 280px !important; /* Tamanho menor solicitado */
+                /* Tamanho AUMENTADO para Mobile */
+                max-width: 340px !important; 
+                
+                /* EMPURRÃOZINHO PARA A DIREITA (Mobile) */
+                transform: translateX(15px); 
             }
 
-            /* B. Centralizar Header Logo */
+            /* B. Centralizar Header Logo (Menu) */
             .header-logo {
                 left: 0 !important; right: 0 !important; width: 100% !important;
                 text-align: center !important; top: 50% !important;
