@@ -27,7 +27,6 @@
         svg {
             max-width: 100%;
             height: auto;
-            /* Garante que o SVG não ultrapasse containers */
             display: block; 
         }
 
@@ -126,12 +125,14 @@
          * =================================================================== */
         @media only screen and (max-width: 800px) {
             
-            /* A. Logo Menor e Centralizado */
+            /* A. Logo Menor e CENTRALIZADO */
             .header-logo {
-                left: 20px !important;
+                left: 50% !important; /* Move para o meio da tela */
+                transform: translate(-50%, -50%) !important; /* Centraliza exato (X e Y) */
+                margin: 0 !important;
+                padding: 0 !important;
             }
             .header-logo svg {
-                /* REDUZIDO AINDA MAIS (Era 90px) */
                 width: 80px; 
             }
 
@@ -189,11 +190,15 @@
                 margin: 0 0 15px 0 !important;
                 width: 100%;
                 max-width: 300px;
+                /* Correção do alinhamento do texto */
+                text-align: center !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
             }
 
             /* F. SVG Principal da Home */
             .home-content h1 svg {
-                max-width: 80%; /* Reduzido um pouco mais para evitar toque nas bordas */
+                max-width: 80%;
             }
 
             /* G. Correção do Botão Estourando a Tela */
@@ -213,7 +218,6 @@
          * =================================================================== */
         @media screen and (min-width: 801px) {
             .header-logo svg {
-                /* REDUZIDO AINDA MAIS (Era 130px) */
                 width: 120px; 
             }
         }
