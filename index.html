@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/main.css">
 
     <style>
-        /* --- Redução do tamanho das fontes dos títulos (Solicitado anteriormente) --- */
+        /* --- Redução do tamanho das fontes dos títulos --- */
         .display-1 {
             font-size: 3.2rem !important;
             line-height: 1.3;
@@ -63,7 +63,7 @@
             transform: scale(1.02);
         }
 
-        /* --- NOVO: Grid de Produtos Alinhados --- */
+        /* --- Grid de Produtos Alinhados --- */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr); /* 2 colunas */
@@ -74,11 +74,10 @@
         .products-grid .item-folio {
             width: 100%;
             height: 100%;
-            /* Removemos flutuações e margens antigas */
             float: none;
             margin: 0;
             padding: 0;
-            border: none; /* Remove borda se desejar visual mais limpo, ou mantenha */
+            border: none;
             border-radius: 8px;
             overflow: hidden;
         }
@@ -89,11 +88,11 @@
             height: 100%;
         }
 
-        /* Força as imagens a terem a mesma altura para alinhar o grid perfeitamente */
+        /* Força as imagens a terem a mesma altura para alinhar o grid */
         .products-grid img {
             width: 100%;
             height: 350px; /* Altura fixa para alinhamento */
-            object-fit: cover; /* Corta a imagem proporcionalmente para preencher o espaço */
+            object-fit: cover; /* Corta a imagem proporcionalmente */
             display: block;
         }
 
@@ -149,7 +148,13 @@
 
         <div class="header-logo">
             <a class="site-logo" href="index.html">
-                <img src="images/logo-xstrong.png" alt="XStrong">
+                <svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="15" width="10" height="30" fill="#FDB913"/>
+                    <rect x="15" y="15" width="10" height="30" fill="#FDB913"/>
+                    <rect x="30" y="15" width="10" height="30" fill="#FDB913"/>
+
+                    <text x="50" y="40" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="white">Xstrong</text>
+                    </svg>
             </a>
         </div> 
 
@@ -198,7 +203,17 @@
             <div class="row home-content__main">
 
                 <h1>
-                <img src="images/logo-xstrong.png" alt="XStrong" style="width: 100%; max-width: 550px; height: auto; transform: scale(2.5);">
+                <svg width="550" height="100" viewBox="0 0 350 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(20, 0) skewX(-15)">
+        <rect x="0" y="20" width="18" height="60" fill="#FDB913"/>
+        <rect x="30" y="20" width="18" height="60" fill="#FDB913"/>
+    </g>
+
+    <text x="72" y="80" font-family="'Open Sans', 'Lato', sans-serif" font-size="82" font-weight="bold" fill="white" transform="skewX(-10)" letter-spacing="-2px">
+        Xstrong
+    </text>
+</svg>
+
             </h1>
 
                 <h3>
@@ -401,7 +416,7 @@
                         </a>
                     </div>
                     <div class="item-folio__text">
-                        <h3 class="item-folio__title">Para Brisa com Camera de Re</h3>
+                        <h3 class="item-folio__title">Luz de Teto LED Laser</h3>
                         <p class="item-folio__cat">Iluminação</p>
                     </div>
                     <a href="#contact" class="item-folio__project-link smoothscroll" title="Pedir">
@@ -491,6 +506,9 @@
                     </div>
                     <div class="form-field">
                         <input name="contactEmail" type="email" id="contactEmail" placeholder="Seu Email" value="" required="" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactPhone" type="tel" id="contactPhone" placeholder="Seu WhatsApp (DDD + Número)" value="" required="" class="full-width">
                     </div>
                     <div class="form-field">
                         <textarea name="contactMessage" id="contactMessage" placeholder="Quais produtos você tem interesse?" rows="5" required="" class="full-width"></textarea>
