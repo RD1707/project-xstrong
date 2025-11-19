@@ -15,7 +15,7 @@
 
     <style>
         /* ===================================================================
-         * CSS Específico para Correções XStrong
+         * CSS Específico para Correções
          * =================================================================== */
 
         html, body {
@@ -38,23 +38,8 @@
             display: block;
             margin: 0 auto; 
             
-            /* AUMENTADO AQUI: Empurrão maior para a direita (Desktop) */
-            /* Antes estava 20px, mudei para 70px */
-            transform: translateX(70px); 
-        }
-
-        /* --- NOVO: Centralização dos Botões (Desktop e Geral) --- */
-        .home-content__main {
-            text-align: center; /* Garante que textos soltos fiquem no meio */
-        }
-
-        .home-content__button {
-            display: flex;
-            justify-content: center; /* Centraliza os botões horizontalmente */
-            align-items: center;
-            gap: 20px; /* Espaço entre os botões se estiverem lado a lado */
-            width: 100%;
-            margin-top: 2rem;
+            /* EMPURRÃOZINHO PARA A DIREITA (Desktop) */
+            transform: translateX(20px); 
         }
 
         /* --- 2. Ajustes de Fontes --- */
@@ -131,13 +116,25 @@
             .col-image { padding-left: 0; margin-bottom: 2rem; }
             .col-image img { margin: 0 auto; max-width: 90%; }
 
-            /* Ajuste Mobile dos botões para ficarem um embaixo do outro */
             .home-content__button {
-                flex-direction: column; 
+                display: flex; flex-direction: column; align-items: center;
             }
+            
+            /* CORREÇÃO APLICADA AQUI */
             .home-content__button .btn {
-                margin: 0 0 15px 0 !important; width: 100%; max-width: 300px;
+                margin: 0 0 15px 0 !important; 
+                width: 100%; 
+                max-width: 300px;
+                
+                /* Garante centralização total */
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
                 text-align: center !important;
+                
+                /* Remove padding assimétrico do tema original */
+                padding-left: 0 !important;
+                padding-right: 0 !important;
             }
 
             .products-grid { grid-template-columns: 1fr; padding: 0 15px; }
