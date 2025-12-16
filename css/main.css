@@ -2954,15 +2954,16 @@ html.no-csstransitions .home-content__main {
   content: "";
   position: absolute;
   top: 0;
+  z-index: 10;
   left: 50%;
   bottom: 0;
   right: 0;
   width: 50%;
   height: 100%;
   opacity: .3;
-  background-color: rgba(0, 0, 0, 0.9);
-  background-image: url(../images/pattern.jpg);
-  background-size: 760px 380px;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  background-image: url(../images/pattern.jpg) !important;
+  background-size: 760px 380px !important;
 }
 
 /* ------------------------------------------------------------------- 
